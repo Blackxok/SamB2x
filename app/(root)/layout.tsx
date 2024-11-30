@@ -4,10 +4,10 @@ import Navbar from './_components/navbar'
 
 export default function Layout({ children }: ChildProps) {
 	return (
-		<div>
+		<main>
 			<Navbar />
-			{children}
+			<div className='container'>{children}</div>
 			<Footer />
-		</div>
+		</main>
 	)
 }
