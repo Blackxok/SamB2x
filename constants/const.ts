@@ -14,3 +14,30 @@ export const PopCategories = [
 	{ name: 'Full stack', slug: 'full-stack' },
 	{ name: 'AI', slug: 'ai' },
 ]
+
+export const posts = [
+	{
+		title: 'title post 1',
+		description: 'description post',
+		author: 'author',
+		tags: ['tags1'],
+		date: 'dec 02.03.2014',
+		image: '../public/blogs/b1.jpg',
+	},
+	{
+		title: 'title post 2',
+		description: 'description post',
+		author: 'author',
+		tags: ['tags1'],
+		date: 'dec 02.03.2014',
+		image: '../public/blogs/b1.jpg',
+	},
+	{
+		title: 'title post 3',
+		description: 'description post',
+		author: 'author',
+		tags: ['tags1'],
+		date: 'dec 02.03.2014',
+		image: '../public/blogs/b1.jpg',
+	},
+]
