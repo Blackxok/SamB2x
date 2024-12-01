@@ -19,26 +19,30 @@ export const posts = [
 	{
 		title: 'Web Developer',
 		description: 'This is the first blog post description.',
-		author: 'Author 1',
+		author: 'Charlie Par',
 		tags: ['tag1', 'tag2'],
 		date: 'Dec 03, 2014',
 		image: '/blogs/b1.jpg',
+		avatar: '/authors/p1.jpg',
 	},
 	{
 		title: 'Artificial Intelligent',
-		description: 'An engaging description for the second blog post.',
-		author: 'Author 2',
+		description:
+			'An engaging description for the second blog post.An engaging description for the second blog post.An engaging description for the second blog post.',
+		author: 'Micah Logan',
 		tags: ['tag3', 'tag4'],
 		date: 'Jan 15, 2015',
 		image: '/blogs/b2.jpg',
+		avatar: '/authors/p2.jpg',
 	},
 	{
 		title: 'Software Engineering',
 		description: 'Details about the third blog post go here.',
-		author: 'Author 3',
+		author: 'Alex Christensen',
 		tags: ['tag5', 'tag6'],
 		date: 'Feb 10, 2016',
 		image: '/blogs/b3.jpg',
+		avatar: '/authors/p3.jpg',
 	},
 ]
 
