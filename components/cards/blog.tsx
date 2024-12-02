@@ -44,7 +44,7 @@ export default function BlogCard(blog: Props) {
 					</div>
 					<div className='flex items-center gap-2'>
 						<Link href={`/tags/${blog.tag.slug}`}>
-							<Badge className='font-jetB truncate'>{blog.category.slug}</Badge>
+							<Badge className='font-jetB truncate'>{blog.slug}</Badge>
 						</Link>
 					</div>
 				</div>

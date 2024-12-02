@@ -9,6 +9,7 @@ export const getBlogByTag = async (slug: string) => {
 		query MyQuery($slug: String!) {
 			tag(where: { slug: $slug }) {
 				blog {
+					description
 					author {
 						... on Author {
 							name
@@ -33,14 +34,13 @@ export const getBlogByTag = async (slug: string) => {
 					title
 					description
 				}
+				name
 			}
 		}
 	`
 	try {
-		const {
-			tag: { blog },
-		} = await request<{ tag: { blog: IBlog } }>(endpoint, query, { slug })
-		return blog
+		const { tag } = await request<{ tag: { blog: IBlog[]; name: string } }>(endpoint, query, { slug })
+		return tag
 	} catch (error) {
 		console.error('Error fetching data:', error)
 	}
