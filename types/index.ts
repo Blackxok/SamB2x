@@ -6,10 +6,22 @@ export interface ChildProps {
 
 export interface IBlog {
 	title: string
+	author: IAuthor
+	category: ICatandTag
 	description: string
-	author: string
-	date: string
-	image: string
-	avatar: string
-	tags: string[]
+	tag: ICatandTag
+	image: { url: string }
+	createdAt: string
+	contentHtml: { html: string }
+	slug: string
+}
+export interface IAuthor {
+	name: string
+	avatar: { url: string }
+	bio: string
+}
+
+export interface ICatandTag {
+	name: string
+	slug: string
 }

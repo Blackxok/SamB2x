@@ -1,3 +1,4 @@
+import { IBlog } from '@/types'
 import { gql, request } from 'graphql-request'
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
@@ -10,6 +11,9 @@ const query = gql`
 			author {
 				... on Author {
 					name
+					avatar {
+						url
+					}
 				}
 			}
 			category {
@@ -21,18 +25,64 @@ const query = gql`
 				name
 				slug
 			}
+			image {
+				url
+			}
+			createdAt
+			contentHtml {
+				html
+			}
+			slug
 		}
 	}
 `
 
 export const getBlogs = async () => {
 	try {
-		const response = await request(endpoint, query, {
+		const { blogs } = await request<{ blogs: IBlog[] }>(endpoint, query, {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
 		})
-		return response
+		return blogs
+	} catch (error) {
+		console.error('Error fetching data:', error)
+	}
+}
+
+export const getBlogBySlug = async (slug: string) => {
+	const query = gql`
+		query MyQuery($slug: String!) {
+			blog(where: { slug: $slug }) {
+				author {
+					... on Author {
+						name
+						avatar {
+							url
+						}
+						bio
+					}
+				}
+				contentHtml {
+					html
+				}
+				createdAt
+				image {
+					url
+				}
+				slug
+				tag {
+					name
+					slug
+				}
+				title
+				description
+			}
+		}
+	`
+	try {
+		const { blog } = await request<{ blog: IBlog }>(endpoint, query, { slug })
+		return blog
 	} catch (error) {
 		console.error('Error fetching data:', error)
 	}

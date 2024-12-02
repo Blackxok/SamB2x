@@ -22,9 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: ChildProps) {
 	return (
 		<html lang='en'>
-			<body className={`${roboto.variable} ${jetB.variable} antialiased dark`}>
-				{children}
-			</body>
+			<body className={`${roboto.variable} ${jetB.variable} antialiased dark`}>{children}</body>
 		</html>
 	)
 }
