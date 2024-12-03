@@ -1,10 +1,16 @@
+import AuthorCard from '@/components/cards/author'
+import { getAuthors } from '@/service/auth.service'
 import { Dot, Home } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function AboutPage() {
+export default async function AboutPage() {
+	const authors = await getAuthors()
+
+	console.log(authors)
+
 	return (
-		<div className=' min-h-[100vh] pt-[10vh] max-w-6xl mx-auto'>
+		<div className=' min-h-[100vh] pt-[10vh] max-w-6xl mx-auto mb-8'>
 			<div className='relative min-h-[20vh] flex items-center justify-center flex-col'>
 				<h2 className='text-center text-4xl font-roboto'>
 					<span className='font-jetB'>About</span>
@@ -36,6 +42,16 @@ export default function AboutPage() {
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam qui ratione, voluptatem itaque corporis rem dolor necessitatibus voluptates
 				adipisci ipsum dicta quidem odio officiis ipsa doloremque maxime atque! Perspiciatis, autem?
 			</p>
+
+			<h2 className='text-center text-4xl section-title font-creteRound my-12'>
+				<span>Our writers</span>
+			</h2>
+
+			<div className='flex justify-around max-md:flex-col max-md:space-y-4 max-md:items-center'>
+				{authors!.map(c => (
+					<AuthorCard key={c.name} {...c} />
+				))}
+			</div>
 		</div>
 	)
 }

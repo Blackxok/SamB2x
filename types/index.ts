@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-
 export interface ChildProps {
 	children: ReactNode
 }
@@ -19,6 +18,8 @@ export interface IAuthor {
 	name: string
 	avatar: { url: string }
 	bio: string
+	blogs: IBlog[]
+	id: string
 }
 
 export interface ICatandTag {
