@@ -26,3 +26,8 @@ export interface ICatandTag {
 	name: string
 	slug: string
 }
+
+export interface IArchivedBlog {
+	year: string
+	blogs: IBlog[]
+}

@@ -1,7 +1,11 @@
 import ContactForm from '@/components/forms/contact'
 import { Dot, Home, Mail, Phone } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
+export const metadata: Metadata = {
+	title: 'Contact page',
+}
 function ContactPage() {
 	return (
 		<div className='max-w-6xl mx-auto mb-7 h-[100vh]'>

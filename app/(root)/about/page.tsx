@@ -3,11 +3,14 @@ import { getAuthors } from '@/service/auth.service'
 import { Dot, Home } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+	title: 'About us',
+}
 export default async function AboutPage() {
 	const authors = await getAuthors()
 
-	console.log(authors)
 
 	return (
 		<div className=' min-h-[100vh] pt-[10vh] max-w-6xl mx-auto mb-8'>

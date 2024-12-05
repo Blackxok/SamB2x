@@ -15,6 +15,13 @@ export const PopCategories = [
 	{ name: 'AI', slug: 'ai' },
 ]
 
+export const popularTags = [
+	{ name: 'ReactJS', slug: 'react-js' },
+	{ name: 'JavaScript', slug: 'java-script' },
+	{ name: 'NodeJS', slug: 'node-js' },
+	{ name: 'NextJS', slug: 'next-js' },
+]
+
 export const posts = [
 	{
 		title: 'Web Developer',

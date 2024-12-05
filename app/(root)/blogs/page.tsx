@@ -2,11 +2,15 @@ import BlogCard from '@/components/cards/blog'
 import { getBlogs } from '@/service/blog.service'
 import { Dot, Home } from 'lucide-react'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+	title: 'All blogs',
+}
 export default async function BlogsPage() {
 	const blogs = await getBlogs()
 	return (
-		<div className='max-w-6xl mx-auto mb-7'>
+		<div className='max-w-6xl mx-auto mb-7 h-[100vh]'>
 			<div className='relative min-h-[26vh] flex items-center justify-end flex-col'>
 				<h2 className='text-center text-4xl font-jetB'>
 					<span className='font-jetB'>Blogs</span>

@@ -8,7 +8,7 @@ async function Page({ params }: { params: { id: string } }) {
 	console.log(author)
 
 	return (
-		<div className='max-w-6xl mx-auto pt-36'>
+		<div className='max-w-6xl mx-auto pt-36 h-[100vh]'>
 			<div className='flex mt-6 gap-6 items-center max-md:flex-col'>
 				<Image src={author.avatar.url} alt='author' width='200' height='200' className='rounded-md max-md:self-start' />
 				<div className='flex-1 flex flex-col space-y-4'>
