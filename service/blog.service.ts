@@ -1,5 +1,6 @@
 import { IArchivedBlog, IBlog } from '@/types'
 import { gql, request } from 'graphql-request'
+import { cache } from 'react'
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
 const token = process.env.DEFAULT_PUBLIC_GRAPHCMS_TOKEN!
@@ -83,7 +84,7 @@ export const getArchiveBlogs = async () => {
 	return results
 }
 
-export const getBlogBySlug = async (slug: string) => {
+export const getBlogBySlug = cache(async (slug: string) => {
 	const query = gql`
 		query MyQuery($slug: String!) {
 			blog(where: { slug: $slug }) {
@@ -119,7 +120,7 @@ export const getBlogBySlug = async (slug: string) => {
 	} catch (error) {
 		console.error('Error fetching data:', error)
 	}
-}
+})
 
 export const getSearchedBlog = async (title: string) => {
 	const query = gql`

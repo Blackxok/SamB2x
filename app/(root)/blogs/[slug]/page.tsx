@@ -7,6 +7,14 @@ import { ArrowUpRight, CalendarDays, Clock, Facebook, Link2, Linkedin, Minus, Se
 import Image from 'next/image'
 import Link from 'next/link'
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+	const blog = await getBlogBySlug(params.slug)
+
+	return {
+		title: blog?.slug,
+	}
+}
+
 async function SlugPage({ params }: { params: { slug: string } }) {
 	const blog = await getBlogBySlug(params.slug)
 	return (
