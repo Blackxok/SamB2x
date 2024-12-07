@@ -1,5 +1,6 @@
 import BlogCard from '@/components/cards/blog'
 import { getBlogByTag } from '@/service/tag.service'
+import { IBlog } from '@/types'
 import { Dot, Home } from 'lucide-react'
 import Link from 'next/link'
 
@@ -35,7 +36,7 @@ async function Page(props: { params: Params }) {
 			</div>
 
 			<div className='grid grid-cols-2 max-md:grid-cols-1 gap-x-4 gap-y-24 mt-24'>
-				{tag?.blog.map(blog => (
+				{tag!.blog.map((blog: IBlog) => (
 					<BlogCard key={blog.title} {...blog} isVertical />
 				))}
 			</div>
