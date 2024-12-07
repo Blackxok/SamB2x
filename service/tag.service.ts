@@ -1,11 +1,10 @@
 import { IBlog } from '@/types'
 import { gql, request } from 'graphql-request'
-import { cache } from 'react'
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
 // const token = process.env.DEFAULT_PUBLIC_GRAPHCMS_TOKEN!
 
-export const getBlogByTag = cache(async (slug: string) => {
+export const getBlogByTag = async (slug: string) => {
 	const query = gql`
 		query MyQuery($slug: String!) {
 			tag(where: { slug: $slug }) {
@@ -45,4 +44,4 @@ export const getBlogByTag = cache(async (slug: string) => {
 	} catch (error) {
 		console.error('Error fetching data:', error)
 	}
-})
+}
