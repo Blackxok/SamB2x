@@ -7,7 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ShareBtns from '../../_components/shared-btns'
 
-export default async function SlugPage({ params }: { params: { slug: string } }) {
+type Params = Promise<{ slug: string }>
+
+export default async function SlugPage(props: { params: Params }) {
+	const params = await props.params
 	const blog = await getBlogBySlug(params.slug)
 
 	return (

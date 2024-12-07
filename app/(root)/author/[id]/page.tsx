@@ -1,23 +1,17 @@
 import BlogCard from '@/components/cards/blog'
 import { getDetailedAuthor } from '@/service/auth.service'
-import { IAuthor } from '@/types'
 import Image from 'next/image'
 
-async function Page({ params }: { params: { id: string } }) {
-	const author: IAuthor | null = await getDetailedAuthor(params.id)
+type Params = Promise<{ id: string }>
 
-	if (!author) {
-		return (
-			<div className='max-w-6xl mx-auto pt-36 h-[100vh] flex justify-center items-center'>
-				<p className='text-muted-foreground text-xl'>Author not found.</p>
-			</div>
-		)
-	}
+async function Page(props: { params: Params }) {
+	const params = await props.params
+	const author = await getDetailedAuthor(params.id)
 
 	return (
-		<div className='max-w-6xl mx-auto pt-36 h-[100vh]'>
+		<div className='max-w-6xl mx-auto pt-36'>
 			<div className='flex mt-6 gap-6 items-center max-md:flex-col'>
-				<Image src={author.avatar?.url || '/placeholder.png'} alt='author' width={200} height={200} className='rounded-md max-md:self-start' />
+				<Image src={author.avatar.url} alt='author' width='200' height='200' className='rounded-md max-md:self-start' />
 				<div className='flex-1 flex flex-col space-y-4'>
 					<p className='text-muted-foreground text-xl'>
 						<span className='font-bold text-white'>{author.blogs.length}</span> Published posts
@@ -32,8 +26,8 @@ async function Page({ params }: { params: { id: string } }) {
 			</h2>
 
 			<div className='flex flex-col space-y-24 mt-24'>
-				{author.blogs.map((blog, index) => (
-					<BlogCard key={index} {...blog} />
+				{author.blogs.map(blog => (
+					<BlogCard key={blog.title} {...blog} />
 				))}
 			</div>
 		</div>

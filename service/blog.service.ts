@@ -3,7 +3,7 @@ import { gql, request } from 'graphql-request'
 import { cache } from 'react'
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
-const token = process.env.DEFAULT_PUBLIC_GRAPHCMS_TOKEN!
+// const token = process.env.DEFAULT_PUBLIC_GRAPHCMS_TOKEN!
 
 export const getBlogs = async () => {
 	const query = gql`
@@ -46,18 +46,18 @@ export const getBlogs = async () => {
 	}
 }
 
-type Blog = {
-	title: string
-	createdAt: string
-	slug: string
-}
+// type Blog = {
+// 	title: string
+// 	createdAt: string
+// 	slug: string
+// }
 
-type GroupedBlogs = {
-	[year: string]: {
-		year: string
-		blogs: Blog[]
-	}
-}
+// type GroupedBlogs = {
+// 	[year: string]: {
+// 		year: string
+// 		blogs: Blog[]
+// 	}
+// }
 export const getArchiveBlogs = async () => {
 	const query = gql`
 		query MyQuery {

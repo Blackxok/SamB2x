@@ -69,9 +69,7 @@ export const getDetailedAuthor = async (id: string) => {
 		}
 	`
 
-	const { author } = await request<{
-		author: IAuthor
-	}>(endpoint, query, { id })
+	const { author } = await request<{ author: IAuthor }>(endpoint, query, { id })
 	return author
 }
 
