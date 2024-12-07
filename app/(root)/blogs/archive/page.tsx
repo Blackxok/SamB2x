@@ -3,6 +3,7 @@ import { format } from 'date-fns'
 import { Archive, Dot, Home } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { v4 as uuidv4 } from 'uuid'
 
 export const metadata: Metadata = {
 	title: 'Archive blogs',
@@ -10,8 +11,6 @@ export const metadata: Metadata = {
 
 async function ArchivePage() {
 	const blogs = await getArchiveBlogs()
-
-	console.log(blogs)
 
 	return (
 		<div className='max-w-6xl mx-auto h-[100vh]'>
@@ -35,7 +34,7 @@ async function ArchivePage() {
 				</div>
 			</div>
 			{blogs.map(blog => (
-				<>
+				<div key={uuidv4()}>
 					<div className='flex flex-col space-y-3 mt-8'>
 						<div className='relative'>
 							<span className='text-5xl font-creteRound relative z-20'>{blog.year}</span>
@@ -53,7 +52,7 @@ async function ArchivePage() {
 							</div>
 						))}
 					</div>
-				</>
+				</div>
 			))}
 		</div>
 	)

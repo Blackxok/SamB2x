@@ -1,6 +1,7 @@
 import { ChildProps } from '@/types'
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Roboto } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
 import './globals.css'
 
 const jetB = JetBrains_Mono({
@@ -40,7 +41,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: ChildProps) {
 	return (
 		<html lang='en'>
-			<body className={`${roboto.variable} ${jetB.variable} antialiased dark`}>{children}</body>
+			<body className={`${roboto.variable} ${jetB.variable} antialiased dark`}>
+				<NextTopLoader showSpinner={false} />
+				{children}
+			</body>
 		</html>
 	)
 }
