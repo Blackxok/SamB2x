@@ -16,12 +16,12 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://test-blog.sammi.ac'),
+	metadataBase: new URL('https://sam-b2x-jma3.vercel.app/'),
 	title: 'Dasturlashga oid maqolalar',
 	description:
 		'Dasturlash haqida yangiliklar, maslahatlar, va dasturlash sohasidagi eng soʻnggi xabarlar. Bizning blogda dasturlashni oʻrganish va rivojlantirish uchun qoʻllanma topishingiz mumkin.',
-	authors: [{ name: 'Samar Badriddinov', url: 'https://sammi.ac' }],
-	icons: { icon: '/favicon.png' },
+	authors: [{ name: 'Doniyor Nasriddinov', url: 'https://sam-b2x-jma3.vercel.app/' }],
+	icons: { icon: '../public/forMetadata.jpg' },
 	keywords:
 		"dasturlash kurslari, dasturlashga oid darslar, reactjs uzbek tilida, vuejs uzbek tilida, redux uzbek tilida, bepul dasturlash, rezyume yozish, portfolio, sammi javascript, sammi raqamli avlod, javascript, reactjs, vuejs, javascript darslari, reactjs darslari, vuejs darslari, dasturlash darslari, o'zbek tilida dasturlash, reactjs o'zbek tilida, reactjs darslari o'zbek tilida, javascript darslari, javascript darslari o'zbek tilida, dasturash darslari o'zbek tilida, dasturlashni o'rganish, dasturlash, IT loyihalar o'zbek tilida",
 	openGraph: {
