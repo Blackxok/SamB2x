@@ -13,8 +13,8 @@ async function ArchivePage() {
 	const blogs = await getArchiveBlogs()
 
 	return (
-		<div className='max-w-6xl mx-auto h-[100vh]'>
-			<div className='relative min-h-[40vh] flex items-center justify-end flex-col'>
+		<div className='max-w-6xl mx-auto mb-7 min-h-[100vh]'>
+			<div className='relative min-h-[30vh] flex items-center justify-end flex-col'>
 				<p className='text-lg text-muted-foreground'>Showing posts from</p>
 				<h2 className='text-center text-4xl section-title font-creteRound mt-2'>
 					<span>Archive</span>

@@ -11,7 +11,7 @@ export default async function getStaticProps() {
 	const blogs = await getBlogs()
 
 	return (
-		<div className='max-w-6xl mx-auto mb-7 h-[100vh]'>
+		<div className='max-w-6xl mx-auto mb-7 min-h-[100vh]'>
 			<div className='relative min-h-[26vh] flex items-center justify-end flex-col'>
 				<h2 className='text-center text-4xl font-jetB'>
 					<span className='font-jetB'>Blogs</span>
@@ -26,7 +26,7 @@ export default async function getStaticProps() {
 					<p className='font-jetB'>Blogs</p>
 				</div>
 			</div>
-			<h1 className='text-center text-2xl font-jetB mt-7'>Lorem ipsum dolor sit amet.</h1>
+			<h1 className='text-center text-2xl font-jetB mt-7'>Exploring the World of Software</h1>
 
 			<div className='grid grid-cols-3 max-md:grid-cols-1 gap-x-4 gap-y-24 mt-6'>
 				{blogs!.map(blog => (

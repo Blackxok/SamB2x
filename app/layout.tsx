@@ -10,7 +10,7 @@ const jetB = JetBrains_Mono({
 	variable: '--font-jetbrains-mono',
 })
 const roboto = Roboto({
-	weight: '700',
+	weight: '500',
 	subsets: ['latin'],
 	variable: '--font-roboto-mono',
 })

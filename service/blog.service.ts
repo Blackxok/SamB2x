@@ -39,6 +39,7 @@ export const getBlogs = async () => {
 	`
 	try {
 		const { blogs } = await request<{ blogs: IBlog[] }>(endpoint, query)
+		console.log(blogs)
 		return blogs
 	} catch (error) {
 		console.error('Error fetching data:', error)
