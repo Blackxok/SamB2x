@@ -32,9 +32,6 @@ export const metadata: Metadata = {
 		url: 'https://sam-b2x-jma3.vercel.app/',
 		locale: 'en_EN',
 		images: '../public/forMetadata.jpg',
-		countryName: 'Uzbekistan',
-		siteName: 'samB2x',
-		emails: 'nasridoni1@gmail.com',
 	},
 }
 
