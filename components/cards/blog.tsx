@@ -10,7 +10,7 @@ interface Props extends IBlog {
 	isVertical?: boolean
 }
 export default function BlogCard(blog: Props) {
-	console.log(blog)
+	// console.log(blog)
 
 	return (
 		<div className={cn('group grid gap-4', blog.isVertical ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2')}>

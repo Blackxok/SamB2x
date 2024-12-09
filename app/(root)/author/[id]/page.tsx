@@ -2,7 +2,10 @@ import BlogCard from '@/components/cards/blog'
 import { getDetailedAuthor } from '@/service/auth.service'
 import Image from 'next/image'
 
-async function Page({ params }: { params: { id: string } }) {
+type Params = Promise<{ id: string }>
+
+export default async function Page(props: { params: Params }) {
+	const params = await props.params
 	const author = await getDetailedAuthor(params.id)
 
 	console.log(author)
@@ -32,5 +35,3 @@ async function Page({ params }: { params: { id: string } }) {
 		</div>
 	)
 }
-
-export default Page

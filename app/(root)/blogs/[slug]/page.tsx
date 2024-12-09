@@ -13,7 +13,7 @@ export default async function SlugPage(props: { params: Params }) {
 	const params = await props.params
 	const blog = await getBlogBySlug(params.slug)
 
-	console.log(blog?.author)
+	// console.log(blog?.author)
 
 	return (
 		<div className='pt-[15vh] max-w-6xl mx-auto mb-7'>
