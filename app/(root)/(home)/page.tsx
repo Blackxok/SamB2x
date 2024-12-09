@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
 	const blogs = await getBlogs()
+	console.log(blogs)
 
 	return (
 		<div className='pt-[10vh] max-w-6xl mx-auto mb-7 min-h-[100vh] px-4 sm:px-6 lg:px-8'>

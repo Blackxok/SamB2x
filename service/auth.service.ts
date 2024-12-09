@@ -23,7 +23,8 @@ export const getAuthors = async () => {
 		const { authors } = await request<{ authors: IAuthor[] }>(endpoint, query)
 		return authors
 	} catch (error) {
-		console.error('Error fetching data:', error)
+		console.error('Error fetching authors:', error)
+		return []
 	}
 }
 
@@ -35,6 +36,7 @@ export const getDetailedAuthor = async (id: string) => {
 				avatar {
 					url
 				}
+				id
 				name
 				blogs {
 					contentHtml {
@@ -62,6 +64,7 @@ export const getDetailedAuthor = async (id: string) => {
 							avatar {
 								url
 							}
+							id
 						}
 					}
 				}
@@ -69,8 +72,13 @@ export const getDetailedAuthor = async (id: string) => {
 		}
 	`
 
-	const { author } = await request<{ author: IAuthor }>(endpoint, query, { id })
-	return author
+	try {
+		const { author } = await request<{ author: IAuthor }>(endpoint, query, { id })
+		return author
+	} catch (error) {
+		console.error('Error fetching author details:', error)
+		return null
+	}
 }
 
 // ID author -- cm45rzxwyb1wc07n2ryegb3ft

@@ -17,6 +17,7 @@ export const getBlogByTag = async (slug: string) => {
 								url
 							}
 							bio
+							id
 						}
 					}
 					contentHtml {

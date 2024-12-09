@@ -15,6 +15,7 @@ export const getBlogs = async () => {
 						avatar {
 							url
 						}
+						id
 					}
 				}
 				category {
@@ -60,7 +61,7 @@ export const getBlogs = async () => {
 export const getArchiveBlogs = async () => {
 	const query = gql`
 		query MyQuery {
-			blogs(where: { archive: false }) {
+			blogs(where: { archive: true }) {
 				title
 				createdAt
 				slug
@@ -94,6 +95,7 @@ export const getBlogBySlug = async (slug: string) => {
 							url
 						}
 						bio
+						id
 					}
 				}
 				contentHtml {

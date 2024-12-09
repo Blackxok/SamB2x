@@ -13,6 +13,8 @@ export default async function SlugPage(props: { params: Params }) {
 	const params = await props.params
 	const blog = await getBlogBySlug(params.slug)
 
+	console.log(blog?.author)
+
 	return (
 		<div className='pt-[15vh] max-w-6xl mx-auto mb-7'>
 			<h1 className='lg:text-6xl md:text-5xl text-4xl font-jetB'>{blog?.title}</h1>
@@ -49,10 +51,10 @@ export default async function SlugPage(props: { params: Params }) {
 			<div className='flex mt-6 gap-6 items-center max-md:flex-col'>
 				<Image src={blog!.author.avatar.url} alt='author' width='155' height='155' className='rounded-md max-md:self-start' />
 				<div className='flex-1 flex flex-col space-y-4'>
-					<h2 className='text-3xl font-jetB'>Thomas Macaulay</h2>
-					<p className='line-clamp-2 text-muted-foreground font-jetB'>{blog!.description}</p>
-					<Link href={`/author/${blog?.author.id}`} className='flex items-center gap-2 hover:text-blue-500 underline transition-colors font-jetB'>
-						<span>{blog!.author.bio}</span>
+					<h2 className='text-3xl font-jetB'>{blog?.author.name}</h2>
+					<p className='line-clamp-3 text-muted-foreground font-jetB'>{blog!.description}</p>
+					<Link href={`/author/${blog!.author.id}`} className='flex items-center gap-2 hover:text-blue-500 underline transition-colors font-jetB'>
+						<span className='line-clamp-3'>{blog!.author.bio}</span>
 						<ArrowUpRight />
 					</Link>
 				</div>

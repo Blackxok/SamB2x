@@ -10,6 +10,8 @@ interface Props extends IBlog {
 	isVertical?: boolean
 }
 export default function BlogCard(blog: Props) {
+	console.log(blog)
+
 	return (
 		<div className={cn('group grid gap-4', blog.isVertical ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2')}>
 			<Link href={`/blogs/${blog.slug}`}>
@@ -38,10 +40,12 @@ export default function BlogCard(blog: Props) {
 				</Link>
 
 				<div className='flex flex-wrap items-center gap-4 text-sm text-gray-500'>
-					<div className='flex items-center gap-2'>
-						<Image src={blog.author.avatar.url} width={35} height={35} alt='Avatar' className='rounded-full' />
-						<p className='font-jetB truncate'>{blog.author.name}</p>
-					</div>
+					<Link href={`/author/${blog.author.id}`}>
+						<div className='flex items-center gap-2'>
+							<Image src={blog.author.avatar.url} width={35} height={35} alt='Avatar' className='rounded-full' />
+							<p className='font-jetB truncate'>{blog.author.name}</p>
+						</div>
+					</Link>
 					<div className='flex items-center gap-2'>
 						<Link href={`/tags/${blog.tag.slug}`}>
 							<Badge className='font-jetB truncate'>{blog.slug}</Badge>
