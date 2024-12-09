@@ -35,3 +35,4 @@ export default async function Page(props: { params: Params }) {
 		</div>
 	)
 }
+// some debug information
