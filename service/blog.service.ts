@@ -2,6 +2,10 @@ import { IArchivedBlog, IBlog } from '@/types'
 import { gql, request } from 'graphql-request'
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
+
+if (!process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT) {
+	console.error('GraphCMS endpoint is not defined!')
+}
 // const token = process.env.DEFAULT_PUBLIC_GRAPHCMS_TOKEN!
 
 export const getBlogs = async () => {
